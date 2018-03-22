@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2018-02-23T13:22:33Z</date>
+    <date>2018-03-22T13:55:01Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -14,7 +14,7 @@
         <template>
             <template>Template App Elasticsearch extended</template>
             <name>Template App Elasticsearch extended</name>
-            <description>v2018-02-14-1</description>
+            <description>v2018-03-22-1</description>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -1644,7 +1644,7 @@
                             <status>0</status>
                             <priority>1</priority>
                             <description/>
-                            <type>7</type>
+                            <type>0</type>
                             <dependencies/>
                         </trigger_prototype>
                         <trigger_prototype>
@@ -1654,7 +1654,7 @@
                             <status>0</status>
                             <priority>4</priority>
                             <description/>
-                            <type>7</type>
+                            <type>0</type>
                             <dependencies/>
                         </trigger_prototype>
                         <trigger_prototype>
@@ -1664,7 +1664,7 @@
                             <status>0</status>
                             <priority>1</priority>
                             <description/>
-                            <type>7</type>
+                            <type>0</type>
                             <dependencies/>
                         </trigger_prototype>
                         <trigger_prototype>
@@ -1674,7 +1674,7 @@
                             <status>0</status>
                             <priority>1</priority>
                             <description/>
-                            <type>7</type>
+                            <type>0</type>
                             <dependencies/>
                         </trigger_prototype>
                     </trigger_prototypes>
@@ -1873,27 +1873,27 @@
     <triggers>
         <trigger>
             <expression>{Template App Elasticsearch extended:elasticsearch[health,status].str(red)}=1</expression>
-            <name>Elasticsearch Cluster Status is Red</name>
+            <name>Elasticsearch Cluster Status is red on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
             <description/>
-            <type>7</type>
+            <type>0</type>
             <dependencies/>
         </trigger>
         <trigger>
             <expression>{Template App Elasticsearch extended:elasticsearch[health,status].str(yellow)}=1</expression>
-            <name>Elasticsearch Cluster Status is Yellow</name>
+            <name>Elasticsearch Cluster Status is yellow on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
             <description/>
-            <type>7</type>
+            <type>0</type>
             <dependencies/>
         </trigger>
         <trigger>
             <expression>{Template App Elasticsearch extended:elasticsearch[health,unassigned_shards].last()}&gt;0</expression>
-            <name>Elasticsearch unassigned shards</name>
+            <name>Elasticsearch unassigned shards on {HOST.NAME}</name>
             <url/>
             <status>0</status>
             <priority>2</priority>
@@ -1903,7 +1903,7 @@
         </trigger>
         <trigger>
             <expression>{Template App Elasticsearch extended:vfs.file.time[/tmp/elastizabbix-zabbix-health.json,modify].now(0)}-{Template App Elasticsearch extended:vfs.file.time[/tmp/elastizabbix-zabbix-health.json,modify].last(0)}&gt;24h</expression>
-            <name>Modification time of elastizabbix-zabbix-health.json</name>
+            <name>Modification time of elastizabbix-zabbix-health.json on {HOST.NAME}</name>
             <url>http://10.151.1.14/redmine/issues/169</url>
             <status>0</status>
             <priority>2</priority>
